@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import React, {useState, useEffect} from "react"
+import Axios from "axios"
 import './App.css';
 
-function App() {
+const API = 'https://official-joke-api.appspot.com/random_joke'
+
+const App =() => {
+
+  const [joke, setJoke] = useState("")
+
+  const getJoke = () => {
+    Axios.get(API).then( (response) => {
+      setJoke(`${response.data.setup} .......... ${response.data.punchline} 🤣 `)
+    })
+  }
+
+  useEffect( () => {
+    getJoke()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="box row">
+        <h2>Jokes</h2>
+        <p dangerouslySetInnerHTML={{__html: joke}}/>
+        <button className="btn-floating pulse" onClick={getJoke}>More</button>
+      </div>
   );
 }
 
