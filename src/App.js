@@ -22,7 +22,7 @@ const App =() => {
       <div className="box row">
         <h2>Jokes</h2>
         <p dangerouslySetInnerHTML={{__html: joke}}/>
-        <button className="btn-floating pulse" onClick={getJoke}>More</button>
+        <button className="btn-floating pulse" onClick={getJoke}><i className="fas fa-plus-circle"></i></button>
       </div>
   );
 }
