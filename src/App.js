@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react"
 import Axios from "axios"
-import './App.css';
+import './App.scss';
 
 const API = 'https://official-joke-api.appspot.com/random_joke'
 

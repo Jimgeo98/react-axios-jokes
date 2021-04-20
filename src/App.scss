@@ -38,14 +38,14 @@ body{
 
 .btn-floating{
   font-weight: bold;
-}
 
-.btn-floating:hover{
-  cursor: pointer;
-}
+  &:hover{
+    cursor: pointer;
+  }
 
-.box .btn-floating:active{
-  transform: scale(1.1);
+  &:active{
+    transform: scale(1.1);
+  }
 }
 
 
